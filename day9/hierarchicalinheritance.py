@@ -10,4 +10,7 @@ class Student2(Teacher):
 obj1=Student1()
 obj2=Student2()
 obj1.english()
+obj1.first()
 obj2.english()
+obj2.second()
+
