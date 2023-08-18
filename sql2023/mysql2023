@@ -1,0 +1,110 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.34 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database python2023;
+Query OK, 1 row affected (0.17 sec)
+
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show python2023;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'python2023' at line 1
+mysql> use python2023;
+Database changed
+mysql> show python2023;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'python2023' at line 1
+mysql>  create table sample(id int,name varchar(20),location varchar(25));
+Query OK, 0 rows affected (0.18 sec)
+
+mysql> desc sample;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| id       | int         | YES  |     | NULL    |       |
+| name     | varchar(20) | YES  |     | NULL    |       |
+| location | varchar(25) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+3 rows in set (0.12 sec)
+
+mysql> create table demo(empno int,ename varchar(23));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> desc demo;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| empno | int         | YES  |     | NULL    |       |
+| ename | varchar(23) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> show table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> rename table to test;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to test' at line 1
+mysql> rename sample to test;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sample to test' at line 1
+mysql> rename table sample to test;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> desc test;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| id       | int         | YES  |     | NULL    |       |
+| name     | varchar(20) | YES  |     | NULL    |       |
+| location | varchar(25) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> show table:
+    -> show table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':
+show table' at line 1
+mysql>
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| python2023         |
+| sys                |
++--------------------+
+5 rows in set (0.05 sec)
+
+mysql> show tables;
++----------------------+
+| Tables_in_python2023 |
++----------------------+
+| demo                 |
+| test                 |
++----------------------+
+2 rows in set (0.06 sec)
+
+mysql> drop test;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'test' at line 1
+mysql> drop table test;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> show tables;
++----------------------+
+| Tables_in_python2023 |
++----------------------+
+| demo                 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql>
